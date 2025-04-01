@@ -1,0 +1,13 @@
+services:
+  # Web Service
+  - type: web
+    name: mlProject
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    # Directory where your code is located (use "." if it's in the root)
+    repo: https://github.com/Jha25Sarvjeet/mlProject.git
+    branch: main
+    
+    
+
