@@ -57,7 +57,8 @@ if __name__=="__main__":
 
     model_trainer=ModelTrainer()
     model_r2_score=model_trainer.initiate_model_trainer(train_array=train_array,test_array=test_array)
-    print(model_r2_score)
+    print(model_r2_score
+          )
     
 
 

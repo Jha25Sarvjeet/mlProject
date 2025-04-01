@@ -1,0 +1,149 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for the form */
+.login {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #1e1e1e; /* Dark form background */
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border: 1px solid #333; /* Dark border */
+    animation: slideIn 0.6s ease-out;
+}
+
+/* Slide-in animation for form */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    color: #ff7043; /* Warm orange for heading */
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+/* Legend Style */
+legend {
+    font-size: 28px;
+    color: #81d4fa; /* Light blue for contrast */
+    font-weight: bold;
+}
+
+/* Form Label Styling */
+.form-label {
+    font-size: 16px;
+    color: #bbbbbb; /* Light gray text */
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Input and Select Styling */
+.form-control {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #333; /* Dark background for inputs */
+    color: #ffffff; /* White text inside inputs */
+    border: 2px solid #444; /* Dark border */
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus State for Inputs */
+.form-control:focus {
+    border-color: #81d4fa; /* Light blue on focus */
+    box-shadow: 0 0 10px rgba(129, 212, 250, 0.3);
+    outline: none;
+}
+
+/* Invalid Input State */
+.form-control.invalid {
+    border-color: #e74c3c; /* Red border for invalid inputs */
+    box-shadow: 0 0 8px rgba(231, 76, 60, 0.3);
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #ff7043; /* Warm orange for button */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #f4511e; /* Darker orange on hover */
+    transform: scale(1.05);
+}
+
+.btn-primary:focus {
+    outline: none;
+}
+
+/* Prediction Result Styling */
+h2 {
+    text-align: center;
+    font-size: 22px;
+    color: #81d4fa; /* Light blue for result */
+    margin-top: 25px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Placeholder styling for select inputs */
+.placeholder {
+    color: #888; /* Light gray for placeholders */
+}
+
+/* Additional Style for Body Padding */
+body {
+    padding: 0 15px;
+}
+
+/* Success Color */
+.success {
+    color: #4caf50; /* Green for success */
+}
+
+/* Error Color */
+.error {
+    color: #e74c3c; /* Red for error messages */
+}
+
+/* Transition Effect for Inputs and Buttons */
+input, select {
+    transition: all 0.3s ease;
+}

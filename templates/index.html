@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Project - Student Performance Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+    <script>
+        function toggleDescription() {
+            const description = document.getElementById('problem-description');
+            description.style.display = (description.style.display === 'none' ? 'block' : 'none');
+        }
+    </script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <h1>Student Performance Predictor</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="predictdata">Predict</a></li> <!-- Link to home.html -->
+            </ul>
+        </nav>
+        
+    </header>
+
+    <section id="intro" class="intro-section">
+        <div class="content">
+            <h1>Welcome to the Home Page</h1>
+            <p>Explore how various factors affect student performance and make predictions about future scores.</p>
+            <button onclick="toggleDescription()">Learn More About the Project</button>
+            <div id="problem-description" style="display: none;">
+                <h2>Problem Statement</h2>
+                <p>This project seeks to understand how the student's performance (test scores) is affected by various factors such as:</p>
+                <ul>
+                    <li>Gender</li>
+                    <li>Ethnicity</li>
+                    <li>Parental Level of Education</li>
+                    <li>Lunch Type</li>
+                    <li>Test Preparation Course</li>
+                </ul>
+                <p>By analyzing these factors, we aim to predict the student's performance and uncover patterns in academic success.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="content">
+            <h2>About the Project</h2>
+            <p>This machine learning project uses student data to create a model that predicts future test scores based on personal information such as their background, educational environment, and preparation. The goal is to understand the importance of various socio-demographic and academic factors in student achievement.</p>
+        </div>
+    </section>
+
+    <section id="predict" class="predict-section">
+        <div class="content">
+            <h2>Make a Prediction</h2>
+            <p>Fill out the form below to predict a student's performance based on various factors. Enter the required information and submit to get a predicted test score.</p>
+            <form action="{{ url_for('predict_datapoint') }}" method="post">
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select class="form-control" name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="ethnicity">Ethnicity</label>
+                    <select class="form-control" name="ethnicity" required>
+                        <option value="" disabled selected>Select Ethnicity</option>
+                        <option value="group A">Group A</option>
+                        <option value="group B">Group B</option>
+                        <option value="group C">Group C</option>
+                        <option value="group D">Group D</option>
+                        <option value="group E">Group E</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="parental_level_of_education">Parental Level of Education</label>
+                    <select class="form-control" name="parental_level_of_education" required>
+                        <option value="" disabled selected>Select Parental Education</option>
+                        <option value="associate's degree">Associate's Degree</option>
+                        <option value="bachelor's degree">Bachelor's Degree</option>
+                        <option value="high school">High School</option>
+                        <option value="master's degree">Master's Degree</option>
+                        <option value="some college">Some College</option>
+                        <option value="some high school">Some High School</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="lunch">Lunch Type</label>
+                    <select class="form-control" name="lunch" required>
+                        <option value="" disabled selected>Select Lunch Type</option>
+                        <option value="free/reduced">Free/Reduced</option>
+                        <option value="standard">Standard</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="test_preparation_course">Test Preparation Course</label>
+                    <select class="form-control" name="test_preparation_course" required>
+                        <option value="" disabled selected>Select Test Preparation Course</option>
+                        <option value="none">None</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="writing_score">Writing Score (0-100)</label>
+                    <input class="form-control" type="number" name="writing_score" required min="0" max="100">
+                </div>
+
+                <div class="form-group">
+                    <label for="reading_score">Reading Score (0-100)</label>
+                    <input class="form-control" type="number" name="reading_score" required min="0" max="100">
+                </div>
+
+                <button type="submit" class="btn-submit">Predict Your Score</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Student Performance Predictor. All rights reserved.</p>
+    </footer>
+</body>
+</html>
